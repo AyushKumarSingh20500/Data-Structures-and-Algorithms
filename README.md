@@ -39,3 +39,19 @@
     ValidIPAddresses
     ReverseWordsInString
     MinimunCharactersForWords
+
+# 5th December 2023
+
+### Searching(Easy)
+
+    LinearSearch
+    BinarySearch
+    FindThreeLargestNumbers
+
+### Searching(Medium)
+
+    SearchInSortedMatrix
+
+### Searching(Hard)
+
+    ShiftedBinarySearch
