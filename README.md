@@ -55,3 +55,16 @@
 ### Searching(Hard)
 
     ShiftedBinarySearch
+
+# 6th December 2023
+
+### Searching(Hard)
+
+    SearchForRange
+    QuickSelect
+    IndexEqualsValue
+
+### Sorting(Easy)
+
+    BubbleSort
+    InsertionSort
