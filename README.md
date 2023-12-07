@@ -68,3 +68,38 @@
 
     BubbleSort
     InsertionSort
+
+# 7th December 2023
+
+### Revised
+
+    NonConstructibleChange
+    SortedSquaredArray
+    TournamentWinner
+    TwoSum
+    ValidateSubsequence
+    ArrayofProduct
+    FirstDuplicateValue
+    LongestPeak
+    MergeOverlappingIntervals
+    MonotonicArray
+    PalindromeCheck
+    CaesarCipherEncryptor
+    RunLenghtEncoding
+    GenerateDocument
+    FirstNonRepeatingCharacter
+    LongestPalindromicSubstring
+    GroupAnagrams
+    ValidIPAddresses
+    ReverseWordsInString
+    MinimunCharactersForWords
+    LinearSearch
+    BinarySearch
+    FindThreeLargestNumbers
+    SearchInSortedMatrix
+    ShiftedBinarySearch
+    SearchForRange
+    QuickSelect
+    IndexEqualsValue
+    BubbleSort
+    InsertionSort
