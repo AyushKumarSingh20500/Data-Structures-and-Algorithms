@@ -87,6 +87,77 @@
 
 # ===================================
 
+# def fibonacci(n):
+#     if n == 1:
+#         return 0
+#     elif n == 2:
+#         return 1
+#     else:
+#         return fibonacci(n-1) + fibonacci(n-2)
+    
+# print(fibonacci(5))
 
+# ===================================
 
+# def sortedOrNot(array):
+#     if len(array) == 1:
+#         return True
+    
+#     if array[0] > array[1]:
+#         return False
+#     else:
+#         return sortedOrNot(array[1:])
+    
+# print(sortedOrNot([10,2,3,4,5]))
+
+# ===================================
+
+# def sumOfArray(array):
+#     if len(array) == 1:
+#         return array[0]
+#     else:
+#         return array[0] + sumOfArray(array[1:])
+    
+# print(sumOfArray([1,2,3,4,5]))
+
+# ===================================
+
+# def presentOrNot(array,target):
+#     if len(array) == 0:
+#         return False
+    
+#     if array[0] == target:
+#         return True
+#     else:
+#         return presentOrNot(array[1:],target)
+    
+# print(presentOrNot([1,2,3,4,5],3))
+
+# ===================================
+
+# def firstIndex(array,target,idx = 0):
+#     if len(array) == idx:
+#         return -1
+    
+#     if array[idx] == target:
+#         return idx
+#     else:
+#         return firstIndex(array,target,idx+1)
+    
+# print(firstIndex([1,2,3,4,4,4,4,5],4,0))
+
+# ===================================
+
+# Revise
+# def lastIndex(array,target,idx):
+#     idx = len(array) - 1
+#     if len(array) == -1:
+#         return -1
+    
+#     if array[idx] == target:
+#         return idx
+#     else:
+#         return lastIndex(array,target,idx-1)
+    
+# print(lastIndex([1,2,3,4,4,4,4,5],4,0))
 
