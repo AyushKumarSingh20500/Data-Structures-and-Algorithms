@@ -148,18 +148,16 @@
 
 # ===================================
 
-# Revise
-# def lastIndex(array,target,idx):
-#     idx = len(array) - 1
-#     if len(array) == -1:
+# def lastIndex(array,target):
+#     return lastIndexHelper(array,target,len(array)-1)
+
+# def lastIndexHelper(array,target,idx):
+#     if len(array) == 0 or idx == -1:
 #         return -1
     
 #     if array[idx] == target:
 #         return idx
-#     else:
-#         return lastIndex(array,target,idx-1)
     
-# print(lastIndex([1,2,3,4,4,4,4,5],4,0))
+#     return lastIndexHelper(array,target,idx-1)
 
-# ===================================
-
+# print(lastIndex([1,2,3,4,4,4,4,5],4))
