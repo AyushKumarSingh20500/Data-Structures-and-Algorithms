@@ -75,7 +75,9 @@ def list_to_LL(array):
         
     return head
 
-head = list_to_LL([1,2,3,4,5,6,7,8,9])
+head = list_to_LL([1,2,3,4,5,6,7,8])
+head1 = list_to_LL([1,3,5,7,9])
+head2 = list_to_LL([0,2,4,6,8])
 
 def print_LL(head):
     while head:
@@ -174,6 +176,203 @@ def delete_ith_in_LL_recursive(head,idx):
         head.next = delete_ith_in_LL_recursive(head.next,idx-1)
         return head
     
-deleted_head_recursive = delete_ith_in_LL_recursive(head,2)
+# deleted_head_recursive = delete_ith_in_LL_recursive(head,2)
 
-print_LL(deleted_head_recursive)
+# print_LL(deleted_head_recursive)
+
+def reverse_LL_recursive(head):
+    if head == None:
+        return None,None
+    
+    if head.next == None:
+        return head,head
+    else:
+        smallHead, smallTail = reverse_LL_recursive(head.next)
+        smallTail.next = head
+        head.next = None
+        return smallHead,head
+    
+# head,tail = reverse_LL_recursive(head)
+
+# print_LL(head)
+
+# print_LL(head1)
+# print_LL(head2)
+
+def merge_two_sorted_LL(head1,head2):
+    curr1 = head1
+    curr2 = head2
+    while curr1 != None and curr2 != None:
+        if curr2.value < curr1.value:
+            temp = curr2.next
+            curr2.next = curr1
+            curr2 = temp
+        else:
+            temp = curr1.next
+            curr1.next = curr2
+            curr1 = temp
+            
+    if head2.value < head1.value:
+        return head2
+    else:
+        return head1
+
+# merged_head = merge_two_sorted_LL(head1,head2)
+
+# print_LL(merged_head)
+
+# by me, without looking, very good, very proud
+# not even saw theoratical solution
+
+def even_after_odd_LL(head):
+    evenHead = None
+    evenTail = None
+    oddHead = None
+    oddTail = None
+    while head:
+        if head.value % 2 == 0:
+            if evenHead == None:
+                evenHead = head
+                evenTail = head
+            else:
+                evenTail.next = head
+                evenTail = head
+        else:
+            if oddHead == None:
+                oddHead = head
+                oddTail = head
+            else:
+                oddTail.next = head
+                oddTail = head
+                
+        head = head.next
+        
+    evenTail.next = head
+    oddTail.next = evenHead
+    
+    return oddHead
+
+# even_after_odd_head = even_after_odd_LL(head)
+
+# print_LL(even_after_odd_head)
+
+# by me, without looking, very good, very proud
+# not even saw theoratical solution
+
+def delete_every_N_Nodes(head,m,n):
+    curr = head
+    slow = head
+    fast = head
+    while curr:
+        for i in range(m-1):
+            if curr:
+                slow = slow.next
+                fast = fast.next
+                curr = curr.next
+                
+        for i in range(n+1):
+            if curr:
+                fast = fast.next
+                curr = curr.next
+            
+        if slow == None:
+            return head
+        else:
+            slow.next = fast
+            slow = fast
+        
+    return head
+
+# print_LL(head)
+
+# delete_every_N_Nodes_Head = delete_every_N_Nodes(head,2,3)
+
+# print_LL(delete_every_N_Nodes_Head)
+
+# by me, without looking, very good, very proud
+# not even saw theoratical solution
+
+def swap_two_node_LL(head,i,j):
+    prev1 = Node(None)
+    curr1 = head
+    for i in range(i):
+        prev1 = curr1
+        curr1 = curr1.next
+        
+    temp1 = curr1.next
+    
+    prev2 = Node(None)
+    curr2 = head
+    for i in range(j):
+        prev2 = curr2
+        curr2 = curr2.next
+        
+    temp2 = curr2.next
+    
+    prev1.next = curr2
+    curr2.next = temp1
+    prev2.next = curr1
+    curr1.next = temp2
+    
+    return curr2
+
+# swapped_head = swap_two_node_LL(head,0,14)
+
+# print_LL(swapped_head)
+
+# by me, without looking, very good, very proud
+# not even saw theoratical solution
+
+def k_reverse_LL(head,k):
+    prev = None
+    curr = head
+    tail = head
+    counter = 0
+    if counter == 4 or curr == None:
+        tail.next = k_reverse_LL(curr,k)
+        return prev
+    else:
+        while curr and counter < 4:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+            counter = counter + 1
+            # firstHead = prev
+        return prev
+    
+# k_reversed_head = k_reverse_LL(head,4)
+
+# print_LL(k_reversed_head)
+
+def k_reverse_LL(head, k):
+    prev = None
+    curr = head
+    tail = head
+    counter = 0
+
+    # Count the number of nodes in the current segment
+    temp = head
+    while temp and counter < k:
+        temp = temp.next
+        counter += 1
+
+    if counter == k:
+        while curr and counter > 0:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+            counter -= 1
+
+        if tail:
+            tail.next = k_reverse_LL(curr, k)
+
+        return prev
+    else:
+        return head
+    
+    
+k_reversed_head = k_reverse_LL(head,3)
+
+print_LL(k_reversed_head)

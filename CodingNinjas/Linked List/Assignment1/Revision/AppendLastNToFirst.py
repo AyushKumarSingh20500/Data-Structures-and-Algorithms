@@ -2,7 +2,7 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
 def list_to_LL(array):
     if len(array) == 0:
         return None
@@ -16,35 +16,32 @@ def list_to_LL(array):
         
     return head
 
-head = list_to_LL([1,1,2,3,3,3,3,4,4])
-# head = list_to_LL([1,2,3,3,4,3,4,5,4,5,5,7]) #also working
+head = list_to_LL([1,2,3,4,5])
 
 def print_LL(head):
     while head:
         print(head.value,end="-->")
         head = head.next
     print("None")
-    
+
 print_LL(head)
 
-def eleminate_duplicates_from_LL(head):
+def appendLastNToFirst(head,num):
     slow = head
     fast = head
-    while fast != None:
-        if slow.value == fast.value:
-            fast = fast.next
-        else:
-            slow.next = fast
-            slow = fast
-            fast = fast.next
-            
-    slow.next = fast
+    for i in range(num):
+        fast = fast.next
+        
+    while fast.next != None:
+        slow = slow.next
+        fast = fast.next
+        
+    fast.next = head
+    head = slow.next
+    slow.next = None
     
     return head
 
-eleminated_head = eleminate_duplicates_from_LL(head)
+appended_head = appendLastNToFirst(head,2)
 
-print_LL(eleminated_head)
-
-# by me, without looking, very good, very proud
-# not even saw theoratical solution
+print_LL(appended_head)
