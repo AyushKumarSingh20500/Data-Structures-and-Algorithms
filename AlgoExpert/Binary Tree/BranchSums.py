@@ -31,10 +31,13 @@ def branchSum(root):
     return result
 
 def branchSumHelper(node,runningSum,result):
+    if node == None:
+        return
+    
     newRunningSum = runningSum + node.value
     if node.left == None and node.right == None:
         result.append(newRunningSum)
-        result
+        return
         
     branchSumHelper(node.left,newRunningSum,result)
     branchSumHelper(node.right,newRunningSum,result)
