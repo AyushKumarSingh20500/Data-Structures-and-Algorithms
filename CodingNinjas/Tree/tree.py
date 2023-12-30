@@ -103,3 +103,6 @@ def heightOfTree(root):
     return 1 + max(left,right)
 
 print(heightOfTree(a))
+
+
+
